@@ -2,10 +2,9 @@
 
 
 :root {
-  --font-title: "Poor Richard", serif;
-  --font-heading: "Rokkitt", serif;
-  --font-body: "Poppins", sans-serif;
-
+  --font-pr: "Poor Richard";
+  --font-r: "Rokkitt";
+  --font-p: "Poppins";
 
   --color-principal: #4B2E2B;
   --color-secundario: #FFF3F3;
@@ -15,38 +14,21 @@
   --color-apoyo-1: #E5E5E5;
   --color-apoyo-2: #6C6C6C;
 
+  --space-xs: 0.5rem;  /* 8px */
+  --space-sm: 1rem;  /* 16px */
+  --space-md: 1.5rem;  /* 24px */
+  --space-lg: 2.5rem;  /* 40px */
+  --space-xl: 5rem;  /* 80px */
 
-  --space-xs: 0.5rem;
-  /* 8px */
-  --space-sm: 1rem;
-  /* 16px */
-  --space-md: 1.5rem;
-  /* 24px */
-  --space-lg: 2.5rem;
-  /* 40px */
-  --space-xl: 5rem;
-  /* 80px */
+  --radius: 0.9375rem;  /* 15px */
 
-
-  --radius: 0.9375rem;
-  /* 15px */
-
-
-  --h1-size: 4rem;
-  /* 64px */
-  --h2-size: 3rem;
-  /* 48px */
-  --h3-size: 2.5rem;
-  /* 40px */
-  --h4-size: 2.25rem;
-  /* 36px */
-  --h5-size: 2rem;
-  /* 32px */
-  --h6-size: 1.25rem;
-  /* 20px */
-
-  --text-size: 1rem;
-  /* 16px */
+  --h1-size: 4rem;  /* 64px */
+  --h2-size: 3rem;  /* 48px */
+  --h3-size: 2.5rem;  /* 40px */
+  --h4-size: 2.25rem;  /* 36px */
+  --h5-size: 2rem;  /* 32px */
+  --h6-size: 1.25rem;  /* 20px */
+  --p-size: 2rem;  /* 32px */
 }
 
 /* RESET*/
@@ -74,14 +56,14 @@ input {
 
 /* BASE (TIPOGRAFÍA) */
 body {
-  font-family: var(--font-body);
-  font-size: var(--text-size);
+  font-family: var(--font-pr);
+  font-size: var(--p-size);
   color: var(--color-neutro2);
   background: var(--color-neutro1);
 }
 
 h1 {
-  font-family: var(--font-title);
+  font-family: var(--font-pr);
   font-size: var(--h1-size);
   font-weight: 400;
   line-height: 1.15;
@@ -89,7 +71,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1.1;
@@ -97,7 +79,7 @@ h2 {
 }
 
 h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h3-size);
   font-weight: 400;
   line-height: 1.1;
@@ -105,7 +87,7 @@ h3 {
 }
 
 h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h4-size);
   font-weight: 400;
   line-height: 1.1;
@@ -113,25 +95,24 @@ h4 {
 }
 
 h5 {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h5-size);
   font-weight: 400;
-  /* regular */
   line-height: 1.1;
-  color: var(--color-principal);
+  color: var(--color-neutro2);
 }
 
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-p);
   font-size: var(--h6-size);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   color: var(--color-neutro2);
 }
 
 p {
-  font-family: var(--font-body);
-  font-size: var(--text-size);
+  font-family: var(--font-p);
+  font-size: var(--p-size);
   color: var(--color-neutro2);
 }
 
@@ -177,7 +158,7 @@ a {
 
 /* Links del header = H5: Rokkitt 32px => 2rem */
 .header__link {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h5-size);
   font-weight: 400;
   color: var(--color-principal);
@@ -213,9 +194,9 @@ a {
   margin-left: 0;
   
   }
-
+/* Texto buscar = H5: Rokkitt 32px => 2rem */
 .header__buscar-texto {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h5-size);
   font-weight: 400;
   color: var(--color-principal);
@@ -228,7 +209,7 @@ a {
   border: none;
   border-radius: 999px;
   padding: 0 1rem;
-  font-family: var(--font-body);
+  font-family: var(--font-r);
   font-size: 1rem;
   outline: none;
 }
@@ -254,7 +235,7 @@ a {
 }
 
 .banner__titulo {
-  font-family: var(--font-title);
+  font-family: var(--font-pr);
   font-size: var(--h1-size);
   font-weight: 400;
   color: var(--color-neutro1);
@@ -262,20 +243,20 @@ a {
 }
 
 .banner__subtitulo {
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h2-size);
   font-weight: 400;
   color: var(--color-neutro1);
   margin-bottom: var(--space-lg);
 }
-
+/* Botón del banner - Ordena aquí */
 .banner__button{
   background: var(--color-terciario);
   color: var(--color-neutro1);
   border: none;
   padding: 0.9rem 2.2rem;   
   border-radius: 999px;       
-  font-family: var(--font-body);
+  font-family: var(--font-p);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -290,7 +271,7 @@ a {
   transform: translateY(0);
 }
 
-/* CATEGORÍAS (CARRUSEL FLEX)  */
+/* CATEGORÍAS (CARRUSEL FLEX) */
 
 .categorias{
   padding-top: 6rem; 
@@ -298,10 +279,12 @@ a {
 
 .categorias__titulo{
   text-align: center;
+  font-family: var(--font-pr);
+  font-size: var(--h2-size);
+  font-weight: 400;
+  color: var(--color-principal);
   margin-bottom: var(--space-lg);
 }
-
-
 
 .categorias__carousel{
   position: relative;
@@ -309,13 +292,11 @@ a {
   padding: 0 2rem;
 }
 
-
 .categorias__track{
   display: flex;
   gap: 1.5rem;
   transition: transform 0.5s ease-in-out;
 }
-
 
 .categorias__item{
   flex: 0 0 calc((100% - 4.5rem) / 4);
@@ -339,12 +320,32 @@ a {
 
 .card__title{
   margin-top: var(--space-sm);
-  font-family: var(--font-heading);
-  color: var(--color-principal);
-  font-size: 1.5rem;
+  font-family: var(--font-p);
+  font-size: var(--p-size);
+  font-weight: 400;
+  color: var(--color-neutro2);
+  cursor: pointer;
+}
+.categorias__indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
 }
 
-/* ===== SOBRE NOSOTROS + REGÍSTRATE (MOCKUP) ===== */
+.categorias__punto {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secundario);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.categorias__punto--activo {
+  background-color: var(--color-principal); 
+  transform: scale(1.2);
+}
+/* SOBRE NOSOTROS + REGÍSTRATE*/
 
 .about{
   padding: 6rem 2rem;
@@ -354,13 +355,13 @@ a {
 
 .about__container{
   width: 100%;
-  max-width: 75rem;     /* 1200px */
+  max-width: 75rem;
   display: flex;
   gap: 3rem;
   align-items: stretch;
 }
 
-/* IZQUIERDA: SOBRE NOSOTROS */
+/* IZQ SOBRE NOSOTROS */
 .about__info{
   flex: 1;
   background: var(--color-secundario);
@@ -372,8 +373,8 @@ a {
 }
 
 .about__titulo{
-  font-family: var(--font-title); /* Poor Richard */
-  font-size: var(--h2-size);      /* 3rem */
+  font-family: var(--font-pr); 
+  font-size: var(--h2-size);      
   font-weight: 400;
   color: var(--color-principal);
   text-align: center;
@@ -381,10 +382,12 @@ a {
 }
 
 .about__text{
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-family: var(--font-p);
+  font-weight: 400 ;
+  font-size: var(--p-size);
   color: var(--color-neutro2);
+  text-align: justify;
+  line-height: 1.7;
   margin-bottom: 2rem;
 }
 
@@ -398,12 +401,13 @@ a {
 .about__button{
   flex: 1;
   background: var(--color-neutro1);
+  font-family: var(--font-r);
+  font-size: var(--h5-size);
+  color: var(--color-principal);
   border: none;
   border-radius: 999px;
   padding: 0.8rem 1rem;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  color: var(--color-principal);
+  font-weight: 400;
   cursor: pointer;
   box-shadow: 0 0.2rem 0.45rem rgba(0,0,0,0.08);
 }
@@ -418,7 +422,7 @@ a {
 }
 
 .registro__titulo{
-  font-family: var(--font-title); /* Poor Richard */
+  font-family: var(--font-pr); 
   font-size: var(--h2-size);
   font-weight: 400;
   color: var(--color-principal);
@@ -427,8 +431,8 @@ a {
 }
 
 .registro__subtitulo{
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-family: var(--font-p);
+  font-size: var(--p-size);
   font-weight: 400;
   color: var(--color-neutro2);
   text-align: center;
@@ -447,7 +451,7 @@ a {
   padding: 0.85rem 1rem;
   border-radius: 0.9rem;
   border: 0.1rem solid rgba(75,46,43,0.55);
-  font-family: var(--font-body);
+  font-family: var(--font-p);
   font-size: 1rem;
   outline: none;
 }
@@ -464,30 +468,30 @@ a {
   border: none;
   padding: 0.9rem 2.6rem;
   border-radius: 999px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-p);
+  font-size: var(--h6-size);
+  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.20);
 }
-/* ===== FOOTER ===== */
+/*  FOOTER  */
 .footer{
-  background: #5A352D;
+  background:var(--color-principal);
   padding: 3rem 2rem;
 }
 
-/* Todo el texto del footer en H6 blanco */
+
 .footer h6{
-  font-family: var(--font-heading);
+  font-family: var(--font-r);
   font-size: var(--h6-size);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   color: var(--color-neutro1);
 }
 
 /* Contenedor principal */
 .footer__container{
-  max-width: 75rem; /* 1200px */
+  max-width: 75rem; 
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -495,9 +499,7 @@ a {
   gap: 3rem;
 }
 
-/* =========================
-   BLOQUE IZQUIERDO
-========================= */
+/* BLOQUE IZQUIERDO*/
 
 .footer__brand{
   display: flex;
@@ -536,7 +538,7 @@ a {
 /* Iconos */
 .footer__social-link{
   color: var(--color-neutro1);
-  font-size: 1.4rem;
+  font-size: var(--h6-size);
   transition: 0.3s ease;
 }
 
@@ -545,9 +547,7 @@ a {
   transform: translateY(-3px);
 }
 
-/* =========================
-   BLOQUE DERECHO
-========================= */
+/*  BLOQUE DERECHO */
 
 .footer__right{
   display: flex;
