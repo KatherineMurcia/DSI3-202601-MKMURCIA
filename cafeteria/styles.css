@@ -1,0 +1,313 @@
+/* =======================
+   IMPORTS (FUENTES)
+======================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rokkitt:wght@400;600&display=swap');
+
+/* =======================
+   VARIABLES (DESIGN SYSTEM)
+======================= */
+:root {
+  /* Tipografías */
+  --font-title: "Poor Richard", serif;
+  --font-heading: "Rokkitt", serif;
+  --font-body: "Poppins", sans-serif;
+
+  /* Colores */
+  --color-principal: #4B2E2B;
+  --color-secundario: #FFF3F3;
+  --color-terciario: #88AF52;
+
+  --color-blanco: #FFFFFF;
+  --color-negro: #000000;
+  --color-apoyo-1: #E5E5E5;
+  --color-apoyo-2: #6C6C6C;
+
+  /* Espaciados (rem) */
+  --space-xs: 0.5rem;  /* 8px */
+  --space-sm: 1rem;    /* 16px */
+  --space-md: 1.5rem;  /* 24px */
+  --space-lg: 2.5rem;  /* 40px */
+  --space-xl: 5rem;    /* 80px */
+
+  /* Radio */
+  --radius: 0.9375rem; /* 15px */
+
+  /* Tamaños tipográficos (rem) */
+  --h1-size: 4rem;     /* 64px */
+  --h2-size: 3rem;     /* 48px */
+  --h3-size: 2.5rem;   /* 40px */
+  --h4-size: 2.25rem;  /* 36px */
+  --h5-size: 2rem;     /* 32px */
+  --h6-size: 1.25rem;  /* 20px */
+
+  --text-size: 1rem;   /* 16px */
+}
+
+/* =======================
+   CSS RESET
+======================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* =======================
+   BASE (TIPOGRAFÍA)
+======================= */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-size);
+  color: var(--color-negro);
+  background: var(--color-blanco);
+}
+
+h1 {
+  font-family: var(--font-title);
+  font-size: var(--h1-size);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-negro);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-negro);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-negro);
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: var(--h4-size);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-negro);
+}
+
+h5 {
+  font-family: var(--font-heading);
+  font-size: var(--h5-size);
+  font-weight: 400; /* regular */
+  line-height: 1.1;
+  color: var(--color-principal);
+}
+
+h6 {
+  font-family: var(--font-heading);
+  font-size: var(--h6-size);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-negro);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-size);
+  color: var(--color-negro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =======================
+   COMPONENTES
+======================= */
+
+/* ---------- HEADER ---------- */
+.header{
+  background: var(--color-secundario);
+  display: flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  gap: 4rem;              /* 👈 espacio entre logo y menú */
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-img {
+  height: 6.5rem;     /* más grande real (mejor que transform) */
+  width: auto;
+}
+
+/* Nav: ocupa el centro y se alinea a la derecha para acercar “Idioma” al carrito */
+.header__nav{
+  display: flex;
+  align-items: center;
+}
+
+.header__menu{
+  display: flex;
+  align-items: center;
+  gap: 3rem;      /* 👈 separación equilibrada entre Inicio, Nosotros, etc */
+}
+
+/* Links del header = H5: Rokkitt 32px => 2rem */
+.header__link {
+  font-family: var(--font-heading);
+  font-size: var(--h5-size); /* 2rem */
+  font-weight: 400;
+  color: var(--color-principal);
+  line-height: 1;
+}
+
+/* Acciones */
+.header__acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* carrito más cerca del menú */
+}
+
+/* Carrito (sin borde / sin fondo) */
+.header__carrito {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header__carrito-img {
+  width: 5rem;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Buscar */
+.header__busqueda{
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 4rem; /* separación visual del carrito */
+}
+
+.header__buscar-texto {
+  font-family: var(--font-heading);
+  font-size: var(--h5-size); /* 2rem */
+  font-weight: 400;
+  color: var(--color-principal);
+  line-height: 1;
+}
+
+.header__buscar-input {
+  width: 10rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+}
+
+/* ---------- BANNER ---------- */
+.banner {
+  height: 100vh;
+  min-height: 40rem;
+  background-image: url("Archivos/fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner__contenido {
+  color: var(--color-blanco);
+  padding: var(--space-lg);
+}
+
+.boton {
+  background: var(--color-terciario);
+  color: var(--color-blanco);
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* ---------- CATEGORÍAS (CARRUSEL FLEX) ---------- */
+.categorias {
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.categorias__titulo {
+  margin-bottom: var(--space-lg);
+}
+
+.categorias__carrusel {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: var(--space-sm);
+}
+
+/* Mostrar 4 a la vez */
+.categorias__carrusel .card {
+  flex: 0 0 calc((100% - (3 * var(--space-md))) / 4);
+}
+
+/* Cards */
+.card {
+  background: var(--color-blanco);
+  border-radius: var(--radius);
+  padding: var(--space-sm);
+  box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card__imagen {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.card__titulo {
+  margin-top: var(--space-sm);
+  font-family: var(--font-heading);
+  color: var(--color-principal);
+  font-size: 1.5rem;
+}
+
+/* Scroll invisible */
+.categorias__carrusel::-webkit-scrollbar {
+  display: none;
+}
