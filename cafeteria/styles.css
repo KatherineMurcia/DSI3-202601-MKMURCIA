@@ -1,51 +1,55 @@
-/* =======================
-   IMPORTS (FUENTES)
-======================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rokkitt:wght@400;600&display=swap');
 
-/* =======================
-   VARIABLES (DESIGN SYSTEM)
-======================= */
+
 :root {
-  /* Tipografías */
   --font-title: "Poor Richard", serif;
   --font-heading: "Rokkitt", serif;
   --font-body: "Poppins", sans-serif;
 
-  /* Colores */
+
   --color-principal: #4B2E2B;
   --color-secundario: #FFF3F3;
   --color-terciario: #88AF52;
-
-  --color-blanco: #FFFFFF;
-  --color-negro: #000000;
+  --color-neutro1: #FFFFFF;
+  --color-neutro2: #000000;
   --color-apoyo-1: #E5E5E5;
   --color-apoyo-2: #6C6C6C;
 
-  /* Espaciados (rem) */
-  --space-xs: 0.5rem;  /* 8px */
-  --space-sm: 1rem;    /* 16px */
-  --space-md: 1.5rem;  /* 24px */
-  --space-lg: 2.5rem;  /* 40px */
-  --space-xl: 5rem;    /* 80px */
 
-  /* Radio */
-  --radius: 0.9375rem; /* 15px */
+  --space-xs: 0.5rem;
+  /* 8px */
+  --space-sm: 1rem;
+  /* 16px */
+  --space-md: 1.5rem;
+  /* 24px */
+  --space-lg: 2.5rem;
+  /* 40px */
+  --space-xl: 5rem;
+  /* 80px */
 
-  /* Tamaños tipográficos (rem) */
-  --h1-size: 4rem;     /* 64px */
-  --h2-size: 3rem;     /* 48px */
-  --h3-size: 2.5rem;   /* 40px */
-  --h4-size: 2.25rem;  /* 36px */
-  --h5-size: 2rem;     /* 32px */
-  --h6-size: 1.25rem;  /* 20px */
 
-  --text-size: 1rem;   /* 16px */
+  --radius: 0.9375rem;
+  /* 15px */
+
+
+  --h1-size: 4rem;
+  /* 64px */
+  --h2-size: 3rem;
+  /* 48px */
+  --h3-size: 2.5rem;
+  /* 40px */
+  --h4-size: 2.25rem;
+  /* 36px */
+  --h5-size: 2rem;
+  /* 32px */
+  --h6-size: 1.25rem;
+  /* 20px */
+
+  --text-size: 1rem;
+  /* 16px */
 }
 
-/* =======================
-   CSS RESET
-======================= */
+/* RESET*/
 *,
 *::before,
 *::after {
@@ -68,14 +72,12 @@ input {
   font: inherit;
 }
 
-/* =======================
-   BASE (TIPOGRAFÍA)
-======================= */
+/* BASE (TIPOGRAFÍA) */
 body {
   font-family: var(--font-body);
   font-size: var(--text-size);
-  color: var(--color-negro);
-  background: var(--color-blanco);
+  color: var(--color-neutro2);
+  background: var(--color-neutro1);
 }
 
 h1 {
@@ -83,7 +85,7 @@ h1 {
   font-size: var(--h1-size);
   font-weight: 400;
   line-height: 1.15;
-  color: var(--color-negro);
+  color: var(--color-neutro2);
 }
 
 h2 {
@@ -91,7 +93,7 @@ h2 {
   font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1.1;
-  color: var(--color-negro);
+  color: var(--color-neutro2);
 }
 
 h3 {
@@ -99,7 +101,7 @@ h3 {
   font-size: var(--h3-size);
   font-weight: 400;
   line-height: 1.1;
-  color: var(--color-negro);
+  color: var(--color-neutro2);
 }
 
 h4 {
@@ -107,13 +109,14 @@ h4 {
   font-size: var(--h4-size);
   font-weight: 400;
   line-height: 1.1;
-  color: var(--color-negro);
+  color: var(--color-neutro2);
 }
 
 h5 {
   font-family: var(--font-heading);
   font-size: var(--h5-size);
-  font-weight: 400; /* regular */
+  font-weight: 400;
+  /* regular */
   line-height: 1.1;
   color: var(--color-principal);
 }
@@ -123,13 +126,13 @@ h6 {
   font-size: var(--h6-size);
   font-weight: 600;
   line-height: 1.1;
-  color: var(--color-negro);
+  color: var(--color-neutro2);
 }
 
 p {
   font-family: var(--font-body);
   font-size: var(--text-size);
-  color: var(--color-negro);
+  color: var(--color-neutro2);
 }
 
 a {
@@ -137,17 +140,14 @@ a {
   color: inherit;
 }
 
-/* =======================
-   COMPONENTES
-======================= */
-
-/* ---------- HEADER ---------- */
-.header{
+/*  HEADER  */
+.header {
   background: var(--color-secundario);
   display: flex;
   align-items: center;
-  padding: var(--space-md) var(--space-lg);
-  gap: 4rem;              /* 👈 espacio entre logo y menú */
+  justify-content: space-between;
+  padding: 0.4rem 1.2rem;
+
 }
 
 /* Logo */
@@ -157,26 +157,28 @@ a {
 }
 
 .header__logo-img {
-  height: 6.5rem;     /* más grande real (mejor que transform) */
+  height: 4rem;
   width: auto;
 }
 
-/* Nav: ocupa el centro y se alinea a la derecha para acercar “Idioma” al carrito */
-.header__nav{
+/* Nav: */
+.header__nav {
+  flex: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.header__menu{
+.header__menu {
   display: flex;
-  align-items: center;
-  gap: 3rem;      /* 👈 separación equilibrada entre Inicio, Nosotros, etc */
+  justify-content: center;
+  gap: 2.5rem;/*Espacio entre links del header*/
 }
 
 /* Links del header = H5: Rokkitt 32px => 2rem */
 .header__link {
   font-family: var(--font-heading);
-  font-size: var(--h5-size); /* 2rem */
+  font-size: var(--h5-size);
   font-weight: 400;
   color: var(--color-principal);
   line-height: 1;
@@ -186,10 +188,9 @@ a {
 .header__acciones {
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* carrito más cerca del menú */
+  gap: 1.5rem;
 }
 
-/* Carrito (sin borde / sin fondo) */
 .header__carrito {
   background: transparent;
   border: none;
@@ -197,33 +198,33 @@ a {
   cursor: pointer;
   display: flex;
   align-items: center;
-}
+ }
 
 .header__carrito-img {
-  width: 5rem;
-  height: auto;
+  width: 2rem;
   cursor: pointer;
 }
 
 /* Buscar */
-.header__busqueda{
+.header__busqueda {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-left: 4rem; /* separación visual del carrito */
-}
+  gap: 1.2rem;
+  margin-left: 0;
+  
+  }
 
 .header__buscar-texto {
   font-family: var(--font-heading);
-  font-size: var(--h5-size); /* 2rem */
+  font-size: var(--h5-size);
   font-weight: 400;
   color: var(--color-principal);
   line-height: 1;
 }
 
 .header__buscar-input {
-  width: 10rem;
-  height: 2.2rem;
+  width: 8rem;
+  height: 2rem;
   border: none;
   border-radius: 999px;
   padding: 0 1rem;
@@ -232,7 +233,7 @@ a {
   outline: none;
 }
 
-/* ---------- BANNER ---------- */
+/* BANNER  */
 .banner {
   height: 100vh;
   min-height: 40rem;
@@ -247,67 +248,323 @@ a {
   text-align: center;
 }
 
-.banner__contenido {
-  color: var(--color-blanco);
+.banner__content {
+  color: var(--color-neutro1);
   padding: var(--space-lg);
 }
 
-.boton {
-  background: var(--color-terciario);
-  color: var(--color-blanco);
-  border: none;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius);
-  cursor: pointer;
+.banner__titulo {
+  font-family: var(--font-title);
+  font-size: var(--h1-size);
+  font-weight: 400;
+  color: var(--color-neutro1);
+  margin-bottom: var(--space-md);
 }
 
-/* ---------- CATEGORÍAS (CARRUSEL FLEX) ---------- */
-.categorias {
-  padding: var(--space-xl) var(--space-lg);
-  text-align: center;
-}
-
-.categorias__titulo {
+.banner__subtitulo {
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: 400;
+  color: var(--color-neutro1);
   margin-bottom: var(--space-lg);
 }
 
-.categorias__carrusel {
+.banner__button{
+  background: var(--color-terciario);
+  color: var(--color-neutro1);
+  border: none;
+  padding: 0.9rem 2.2rem;   
+  border-radius: 999px;       
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.20);
+}
+
+.banner__button:hover{
+  transform: translateY(-1px);
+}
+
+.banner__button:active{
+  transform: translateY(0);
+}
+
+/* CATEGORÍAS (CARRUSEL FLEX)  */
+
+.categorias{
+  padding-top: 6rem; 
+}
+
+.categorias__titulo{
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+
+
+.categorias__carousel{
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+
+.categorias__track{
   display: flex;
-  gap: var(--space-md);
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: var(--space-sm);
+  gap: 1.5rem;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Mostrar 4 a la vez */
-.categorias__carrusel .card {
-  flex: 0 0 calc((100% - (3 * var(--space-md))) / 4);
+
+.categorias__item{
+  flex: 0 0 calc((100% - 4.5rem) / 4);
 }
 
-/* Cards */
-.card {
-  background: var(--color-blanco);
+
+.card{
+  background: var(--color-neutro1);
   border-radius: var(--radius);
   padding: var(--space-sm);
   box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.1);
   text-align: center;
 }
 
-.card__imagen {
+.card__image{
   width: 100%;
   height: 15rem;
   object-fit: cover;
   border-radius: var(--radius);
 }
 
-.card__titulo {
+.card__title{
   margin-top: var(--space-sm);
   font-family: var(--font-heading);
   color: var(--color-principal);
   font-size: 1.5rem;
 }
 
-/* Scroll invisible */
-.categorias__carrusel::-webkit-scrollbar {
-  display: none;
+/* ===== SOBRE NOSOTROS + REGÍSTRATE (MOCKUP) ===== */
+
+.about{
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
 }
+
+.about__container{
+  width: 100%;
+  max-width: 75rem;     /* 1200px */
+  display: flex;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* IZQUIERDA: SOBRE NOSOTROS */
+.about__info{
+  flex: 1;
+  background: var(--color-secundario);
+  border-radius: 1.25rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about__titulo{
+  font-family: var(--font-title); /* Poor Richard */
+  font-size: var(--h2-size);      /* 3rem */
+  font-weight: 400;
+  color: var(--color-principal);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about__text{
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-neutro2);
+  margin-bottom: 2rem;
+}
+
+/* Botones */
+.about__buttons{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.about__button{
+  flex: 1;
+  background: var(--color-neutro1);
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-principal);
+  cursor: pointer;
+  box-shadow: 0 0.2rem 0.45rem rgba(0,0,0,0.08);
+}
+
+/* DERECHA: REGISTRO */
+.registro{
+  flex: 1;
+  background: var(--color-neutro1);
+  border-radius: 1.25rem;
+  padding: 3rem;
+  border: 0.125rem solid rgba(75,46,43,0.55);
+}
+
+.registro__titulo{
+  font-family: var(--font-title); /* Poor Richard */
+  font-size: var(--h2-size);
+  font-weight: 400;
+  color: var(--color-principal);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.registro__subtitulo{
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-neutro2);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.registro__form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.registro__input,
+.registro__textarea{
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 0.9rem;
+  border: 0.1rem solid rgba(75,46,43,0.55);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+}
+
+.registro__textarea{
+  min-height: 8rem;
+  resize: none;
+}
+
+.registro__button{
+  margin: 1.5rem auto 0 auto;
+  background: var(--color-terciario);
+  color: var(--color-neutro1);
+  border: none;
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.20);
+}
+/* ===== FOOTER ===== */
+.footer{
+  background: #5A352D;
+  padding: 3rem 2rem;
+}
+
+/* Todo el texto del footer en H6 blanco */
+.footer h6{
+  font-family: var(--font-heading);
+  font-size: var(--h6-size);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-neutro1);
+}
+
+/* Contenedor principal */
+.footer__container{
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* =========================
+   BLOQUE IZQUIERDO
+========================= */
+
+.footer__brand{
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* Bandera */
+.footer__flag{
+  width: 4.5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.5rem ;
+}
+
+/* Bloque legal */
+.footer__legal{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Espacio entre TODOS... y NIT */
+.footer__legal h6:first-child{
+  margin-bottom: 0.8rem;
+}
+
+/* Redes sociales EXACTAMENTE debajo del NIT */
+.footer__social{
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+/* Iconos */
+.footer__social-link{
+  color: var(--color-neutro1);
+  font-size: 1.4rem;
+  transition: 0.3s ease;
+}
+
+.footer__social-link:hover{
+  color: var(--color-terciario);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   BLOQUE DERECHO
+========================= */
+
+.footer__right{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer__title{
+  margin-bottom: 0.6rem;
+}
+
+.footer__link{
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.footer__link:hover{
+  color: var(--color-terciario);
+}
+

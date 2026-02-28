@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Café de mi Tierrita</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -28,14 +29,15 @@
         <li class="header__item">
           <a class="header__link" href="#idioma">Idioma</a>
         </li>
+        <li class="header__item">
+          <button class="header__carrito" type="button" aria-label="Carrito">
+            <img class="header__carrito-img" src="Archivos/carrito.png" alt="Carrito">
+          </button>
+        </li>
       </ul>
     </nav>
 
     <div class="header__acciones">
-      <button class="header__carrito" type="button" aria-label="Carrito">
-        <img class="header__carrito-img" src="Archivos/carrito.png" alt="Carrito">
-      </button>
-
       <div class="header__busqueda">
         <span class="header__buscar-texto">Buscar</span>
         <input class="header__buscar-input" type="search" aria-label="Buscar">
@@ -55,12 +57,10 @@
     <h2 class="categorias__titulo">Compra por categoría</h2>
 
     <div class="categorias__carousel">
-      <button class="categorias__button categorias__button--prev" type="button" onclick="mover(-1)">❮</button>
-
-      <div class="categorias__track" id="track">
+            <div class="categorias__track" id="track">
         <div class="categorias__item">
           <div class="card">
-            <img class="card__image" src="Archivos/bebidasCalientes.jpg" alt="Bebidas calientes">
+            <img class="card__image" src="Archivos/bebidasCalientes.png" alt="Bebidas calientes">
             <h3 class="card__title">Bebidas calientes</h3>
           </div>
         </div>
@@ -101,46 +101,97 @@
         </div>
       </div>
 
-      <button class="categorias__button categorias__button--next" type="button" onclick="mover(1)">❯</button>
     </div>
   </section>
-
-  <section class="about" id="nosotros">
+ <section class="about" id="nosotros">
     <div class="about__container">
-      <h2 class="about__titulo">Sobre Nosotros</h2>
 
-      <p class="about__text">
-        Bienvenidos, somos una cafetería artesanal fundada en 2015, dedicada a ofrecer productos con café Colombiano de alta calidad. Trabajamos con productos locales y cuidamos de cada proceso de tostado.
-      </p>
+      
+      <div class="about__info">
+        <h2 class="about__titulo">Sobre Nosotros</h2>
 
-      <div class="about__buttons">
-        <button class="about__button" type="button">Misión</button>
-        <button class="about__button" type="button">Visión</button>
-        <button class="about__button" type="button">Historia</button>
+        <p class="about__text">
+          Bienvenidos, somos una cafetería artesanal fundada en 2015, dedicada a ofrecer productos con café Colombiano de alta calidad.
+          Trabajamos con productos locales y cuidamos de cada proceso de tostado.
+        </p>
+
+        <div class="about__buttons">
+          <button class="about__button" type="button">Misión</button>
+          <button class="about__button" type="button">Visión</button>
+          <button class="about__button" type="button">Historia</button>
+        </div>
+      </div>
+
+    
+      <div class="registro" id="login">
+        <h2 class="registro__titulo">Regístrate ya !</h2>
+        <p class="registro__subtitulo">Recibirás promociones</p>
+
+        <form class="registro__form">
+          <input class="registro__input" type="text" placeholder="Nombres:" />
+          <input class="registro__input" type="email" placeholder="Email:" />
+          <input class="registro__input" type="tel" placeholder="Celular:" />
+          <textarea class="registro__textarea" placeholder="Mensaje:"></textarea>
+          <button class="registro__button" type="submit">Enviar</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+<footer class="footer">
+  <div class="footer__container">
+
+    <!-- BLOQUE IZQUIERDO -->
+    <div class="footer__left">
+
+      <div class="footer__brand">
+
+        <!-- Bandera -->
+        <img 
+          class="footer__flag" 
+          src="Archivos/colombia.jpg" 
+          alt="Colombia"
+        >
+
+        <!-- Legal + Redes -->
+        <div class="footer__legal">
+
+          <h6 class="footer__text">
+            @TODOS LOS DERECHOS RESERVADOS
+          </h6>
+
+          <h6 class="footer__text">
+            NIT 900.100.234-8. Calle 99 # 14-90 Bogotá, Colombia
+          </h6>
+
+          <!-- Redes EXACTAMENTE debajo del NIT -->
+          <div class="footer__social">
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <div class="registro" id="login">
-      <h2 class="registro__titulo">Regístrate ya !</h2>
-      <p class="registro__subtitulo">Recibirás promociones</p>
-
-      <form class="registro__form">
-        <input class="registro__input" type="text" placeholder="Nombres:">
-        <input class="registro__input" type="email" placeholder="Email:">
-        <input class="registro__input" type="tel" placeholder="Celular:">
-        <textarea class="registro__textarea" placeholder="Mensaje:"></textarea>
-        <button class="registro__button" type="submit">Enviar</button>
-      </form>
+    <!-- BLOQUE DERECHO -->
+    <div class="footer__right">
+      <h6 class="footer__title">Te ayudamos:</h6>
+      <h6 class="footer__link">Venta telefónica</h6>
+      <h6 class="footer__link">Estado de mi pedido</h6>
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="footer__info">
-      @TODOS LOS DERECHOS REVERVADOS <br>
-      NIT 900.100.234-8. Calle 99 # 14-90 Bogotá, Colombia
-    </div>
-  </footer>
-
+  </div>
+</footer>
   <script src="script.js"></script>
 </body>
 </html>
