@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conectores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Conectores</h1>
+    
+    <div class="fila">
+        <p>Instrucciones:</p>
+        <p>Ingrese el número de casos y luego complete los valores para cada conector y tomacorriente.</p>
+        <p>Recuerde que los casos de prueba deben ser numeros enteros entre 1 y 100.</p>
+        
+        <label for="cantidad">Número de casos: </label>
+        <input type="number" id="cantidad" min="1" max="100">
+
+        <button onclick="crearCasos()">Generar</button>
+
+    </div>
+
+    <div id="mensaje"></div>
+
+    <div id="casos"></div>
+
+    <button id="btnCalcular" class="oculto" onclick="calcularCompatibilidad()">Calcular</button>
+
+    <script src="conectores.js"></script>
+
+</body>
+
+</html>
