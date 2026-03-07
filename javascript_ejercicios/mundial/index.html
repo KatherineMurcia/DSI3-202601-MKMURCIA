@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial Colombia Brasil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1> Mundial Colombia Brasil</h1>
+        <p>Instrucciones: </p>
+        <p>Por favor indica el número de partidos y sus respectivos resultados para calcular el puntaje total de Colombia.</p>
+        <label>Número de partidos</label>
+        <input type="number" id="cantidad" min="1" max="100">
+
+ <button onclick="crearInputs()">Evaluar</button>
+
+       <p id="mensaje" class="mensaje"></p>
+
+    <div id="inputs" class="inputs"></div>
+
+    <button type="button" id="btnCalcular" class="oculto" onclick="calcular()">Calcular</button>
+  </div>
+
+  <script src="mundial.js"></script>
+</body>
+</html>
