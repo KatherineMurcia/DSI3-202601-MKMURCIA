@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego piedra, papel o tijera</title>
-    </head>
+<meta charset="UTF-8">
+<title>Sistema de control Juego Piedra Papel o Tijera</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
 <body>
-    <h1>Juego piedra, papel o tijera</h1>
-    <p>Seleccione su opción</p>
+
+<div class="card">
+
+<h1>Sistema de control juego Piedra, Papel o Tijera</h1>
+
+<div class="fila">
+<p>Instrucciones: </p>
+<p>Ingrese el número de juegos que deseas registrar(1 a 100) y haz clic en "Jugar". Luego, selecciona tu opción para cada juego y haz clic en "Calcular" para ver los resultados.</p>
+<label>Número de juegos:</label>
+<input type="number" id="cantidad" min="1" max="100">
+<button onclick="crearSelects()">Jugar</button>
+</div>
+
+<div id="mensaje"></div>
+
+<div id="selects"></div>
+
+<button id="btnCalcular" class="oculto" onclick="calcular()">Calcular</button>
+
+<div id="resultados"></div>
+
+</div>
+
+<script src="juego.js"></script>
+
 </body>
 </html>
