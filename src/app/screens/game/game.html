@@ -1,0 +1,36 @@
+<h1>Bienvenido al juego</h1>
+<app-header [title]="'Piedra, papel o tijera'"
+[description]="'Algoritmo que indica quien ganó'"
+[label]="'Ingrese el ganador'"
+[actionName]="'Calcular'"
+(elements)="generateElements($event)"
+ ></app-header>
+
+@if (elements<0 || elements>100) {
+  <p>La opción ingresada no es válda</p>
+ }
+
+ @if (elements>0) {
+  <h4>La cantidad de juegos </h4>
+  <p>Ingrese el cada opción el ganador</p>
+
+  @for (item of options; track $index) {
+<label>{{$index+1}}</label>
+    <select [(ngModel)]="options[$index]">
+      <option value="">Seleccione un jugador</option>
+      @for (jugador of jugadores; track $index; index; let j= $index) {
+      <option value="{{jugador}}">{{jugador}}</option>
+
+      }
+    </select>
+
+    <button (click)="calculateWinner()" > Calcular Ganador</button>
+
+    @if (ganador !== ""){
+      <h1>El ganador es:  {{this.ganador}}</h1>
+    }
+  }
+ }@else {
+   <p>Se debe ingrear primero la cantida de juegos</p>
+ }
+
