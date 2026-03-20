@@ -1,0 +1,81 @@
+:host {
+  --bg-1: #0f172a;
+  --bg-2: #1e293b;
+  --white: #ffffff;
+  --blue: #2563eb;
+  --teal: #0f766e;
+  --red: #dc2626;
+  --text: #334155;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+
+  display: block;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.app__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn--game {
+  background: var(--blue);
+}
+
+.btn--mundial {
+  background: var(--teal);
+}
+
+.btn--clear {
+  background: var(--red);
+}
+
+.app__content {
+  margin-top: 10px;
+}
+
+.card,
+app-game,
+app-mundial,
+.app__message {
+  display: block;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.app__message {
+  margin: 0;
+  text-align: center;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+}

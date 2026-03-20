@@ -3,6 +3,7 @@ import { Game } from './screens/game/game';
 import { Mundial } from './screens/mundial/mundial';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [
