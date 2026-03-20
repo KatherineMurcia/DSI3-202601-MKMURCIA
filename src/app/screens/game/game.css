@@ -1,0 +1,79 @@
+:host {
+  display: block;
+}
+
+.game {
+  display: block;
+}
+
+.game__title {
+  text-align: center;
+  font-size: 26px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.game__card {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.game__section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.game__text {
+  margin-bottom: 15px;
+  color: #64748b;
+}
+
+.game__list {
+  display: grid;
+  gap: 12px;
+}
+
+.game__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.game__select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #94a3b8;
+}
+
+.game__btn {
+  margin-top: 15px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.game__btn:hover {
+  opacity: 0.9;
+}
+
+.game__winner {
+  margin-top: 20px;
+  background: #dcfce7;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: #166534;
+  font-weight: bold;
+}
+
+.game__info {
+  text-align: center;
+  color: #64748b;
+}
