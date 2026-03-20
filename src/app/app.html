@@ -1,0 +1,23 @@
+<div class="app">
+  <div class="app__actions">
+    <button class="btn btn--game" (click)="changeOption(1)">Juego</button>
+    <button class="btn btn--mundial" (click)="changeOption(2)">Mundial</button>
+    <button class="btn btn--clear" (click)="changeOption(3)">Clear</button>
+  </div>
+
+  <div class="app__content">
+    @switch (this.option) {
+      @case (1) {
+        <app-game class="card"></app-game>
+      }
+
+      @case (2) {
+        <app-mundial class="card"></app-mundial>
+      }
+
+      @default {
+        <p class="app__message">Debe seleccionar una opción</p>
+      }
+    }
+  </div>
+</div>

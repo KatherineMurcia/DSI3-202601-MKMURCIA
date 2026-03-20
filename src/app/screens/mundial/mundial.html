@@ -1,0 +1,65 @@
+<div class="mundial">
+  <h1 class="mundial__title">Partido Amistoso</h1>
+  <p class="mundial__description">
+    Ingresa la cantidad de casos de prueba y luego registra los goles de Brasil y Colombia.
+  </p>
+
+  <div class="mundial__card">
+    <label class="mundial__label">Cantidad de partidos (1 - 100)</label>
+    <input
+      class="mundial__input"
+      type="number"
+      [(ngModel)]="cantidadPartidos"
+      min="1"
+      max="100"
+      placeholder="Ej: 3"
+    />
+
+    <button class="mundial__btn" (click)="generarPartidos()">
+      Generar partidos
+    </button>
+  </div>
+
+  @if (partidos.length > 0) {
+    <div class="mundial__list">
+      @for (partido of partidos; track $index) {
+        <div class="mundial__item">
+          <h3 class="mundial__subtitle">Partido {{ $index + 1 }}</h3>
+
+          <div class="mundial__fields">
+            <div class="mundial__group">
+              <label class="mundial__label">Goles Brasil</label>
+              <input
+                class="mundial__input"
+                type="number"
+                [(ngModel)]="partido.brasil"
+                min="0"
+                placeholder="Brasil"
+              />
+            </div>
+
+            <div class="mundial__group">
+              <label class="mundial__label">Goles Colombia</label>
+              <input
+                class="mundial__input"
+                type="number"
+                [(ngModel)]="partido.colombia"
+                min="0"
+                placeholder="Colombia"
+              />
+            </div>
+
+            <div class="mundial__group">
+              <label class="mundial__label">Resultado</label>
+              <div class="mundial__result">{{ partido.resultado || 'Pendiente' }}</div>
+            </div>
+          </div>
+        </div>
+      }
+
+      <button class="mundial__btn mundial__btn--success" (click)="calcularResultados()">
+        Calcular resultados
+      </button>
+    </div>
+  }
+</div>

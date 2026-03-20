@@ -1,0 +1,11 @@
+<div class="header">
+  <h2 class="header__title">{{title}}</h2>
+  <p class="header__desc">{{description}}</p>
+
+  <div class="header__form">
+    <input class="header__input" type="number" [(ngModel)]="count" />
+    <button class="header__btn" (click)="calculate()">
+      {{actionName}}
+    </button>
+  </div>
+</div>

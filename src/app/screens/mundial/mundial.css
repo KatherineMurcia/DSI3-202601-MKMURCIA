@@ -1,0 +1,107 @@
+:host {
+  display: block;
+}
+
+.mundial {
+  width: 100%;
+}
+
+.mundial__title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.mundial__description {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.mundial__card {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.mundial__list {
+  display: grid;
+  gap: 16px;
+}
+
+.mundial__item {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.mundial__subtitle {
+  margin: 0 0 14px;
+  color: #1e293b;
+}
+
+.mundial__fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.mundial__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mundial__label {
+  font-weight: bold;
+  color: #334155;
+}
+
+.mundial__input {
+  padding: 12px;
+  border: 1px solid #94a3b8;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.mundial__input:focus {
+  border-color: #ea580c;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+}
+
+.mundial__btn {
+  margin-top: 16px;
+  border: none;
+  background: #ea580c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mundial__btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.mundial__btn--success {
+  background: #16a34a;
+}
+
+.mundial__result {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 600;
+}
