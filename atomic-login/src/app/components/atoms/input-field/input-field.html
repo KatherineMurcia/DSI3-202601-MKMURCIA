@@ -1,4 +1,11 @@
-<div class="input">
+<div class="field-wrapper">
   <label>{{ label }}</label>
-  <input [type]="type" [placeholder]="placeholder">
+  <div class="input-container">
+    <input [type]="type === 'password' && showPassword ? 'text' : type"
+           [placeholder]="placeholder" />
+    <span *ngIf="type === 'password'" (click)="togglePassword()" class="toggle-icon">
+      {{ showPassword ? '🙈' : '👁️' }}
+    </span>
+    <span *ngIf="type === 'email'" class="icon">✉️</span>
+  </div>
 </div>

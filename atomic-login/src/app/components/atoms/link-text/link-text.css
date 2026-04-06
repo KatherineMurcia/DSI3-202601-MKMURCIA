@@ -1,0 +1,10 @@
+.link-text {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+a {
+  color: #0a7abf;
+  text-decoration: none;
+  font-weight: bold;
+}

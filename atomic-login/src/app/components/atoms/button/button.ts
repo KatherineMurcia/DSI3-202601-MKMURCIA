@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  imports: [],
+  standalone: true,
   templateUrl: './button.html',
-  styleUrl: './button.css',
+  styleUrl: './button.css'
 })
-export class Button {}
+export class ButtonComponent {
+  @Input() label: string = 'Ingresar';
+}

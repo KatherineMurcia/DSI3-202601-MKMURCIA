@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-link-text',
-  imports: [],
+  standalone: true,
   templateUrl: './link-text.html',
-  styleUrl: './link-text.css',
+  styleUrl: './link-text.css'
 })
-export class LinkText {}
+export class LinkTextComponent {
+  @Input() text: string = '¿No tienes cuenta?';
+  @Input() linkLabel: string = 'Regístrate';
+}

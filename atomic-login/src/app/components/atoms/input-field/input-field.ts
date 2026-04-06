@@ -1,12 +1,20 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-field',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './input-field.html',
-  styleUrls: ['./input-field.css']
+  styleUrl: './input-field.css'
 })
 export class InputFieldComponent {
-  @Input() label = '';
-  @Input() placeholder = '';
-  @Input() type = 'text';
+  @Input() label: string = '';
+  @Input() type: string = 'text';
+  @Input() placeholder: string = '';
+  showPassword = false;
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 }
