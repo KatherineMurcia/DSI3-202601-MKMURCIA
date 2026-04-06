@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { LoginFormComponent } from '../../components/organisms/login-form/login-form';
 
 @Component({
   selector: 'app-login-page',
-  imports: [],
+  standalone: true,
+  imports: [LoginFormComponent],
   templateUrl: './login-page.html',
-  styleUrl: './login-page.css',
+  styleUrl: './login-page.css'
 })
-export class LoginPage {}
+export class LoginPageComponent {}
