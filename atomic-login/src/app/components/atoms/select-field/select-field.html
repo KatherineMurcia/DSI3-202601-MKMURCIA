@@ -1,0 +1,9 @@
+<div class="field-wrapper">
+  <label>{{ label }}</label>
+  <div class="select-container">
+    <select>
+      <option value="" disabled selected>Selecciona una carrera</option>
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+</div>

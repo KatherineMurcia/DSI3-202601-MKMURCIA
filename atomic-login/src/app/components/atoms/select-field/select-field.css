@@ -1,0 +1,24 @@
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+label {
+  font-size: 12px;
+  color: #e8630a;
+  font-weight: bold;
+}
+.select-container {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: white;
+}
+select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+}
