@@ -1,22 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
+import { ButtonComponent } from '../../atoms/button/button';
+import { LinkTextComponent } from '../../atoms/link-text/link-text';
 
-import { FormActions } from './form-actions';
-
-describe('FormActions', () => {
-  let component: FormActions;
-  let fixture: ComponentFixture<FormActions>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [FormActions],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(FormActions);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+@Component({
+  selector: 'app-form-actions',
+  standalone: true,
+  imports: [ButtonComponent, LinkTextComponent],
+  templateUrl: './form-actions.html',
+  styleUrl: './form-actions.css'
+})
+export class FormActionsComponent {
+  @Input() buttonLabel: string = 'Ingresar';
+  @Input() linkText: string = '¿No tienes cuenta?';
+  @Input() linkLabel: string = 'Regístrate';
+}
