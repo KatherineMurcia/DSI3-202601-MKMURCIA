@@ -1,0 +1,18 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  color: #dce3e8;
+  font-size: 14px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #8fa3ad;
+  background: transparent;
+  color: white;
+}
