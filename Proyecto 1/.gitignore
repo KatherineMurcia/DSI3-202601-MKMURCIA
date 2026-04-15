@@ -1,0 +1,66 @@
+# Angular project ignore rules
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache
+.npm
+
+# dotenv
+.env
+.env.test
+
+# Build output
+dist
+
+# generated files
+*.log
+*.tmp
+*.cache
+
+# Yarn
+.yarn-integrity
+
+# Parcel
+.cache
+.parcel-cache
+
+# VS Code test
+.vscode-test
