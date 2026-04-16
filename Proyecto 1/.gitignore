@@ -1,3 +1,4 @@
+# Angular project ignore rules
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -23,6 +24,7 @@ speed-measure-plugin*.json
 .settings/
 *.sublime-workspace
 
+# VS Code
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
@@ -31,6 +33,8 @@ speed-measure-plugin*.json
 !.vscode/extensions.json
 .history/*
 
+# Misc
+/.angular/cache
 # misc
 /.sass-cache
 /connect.lock
@@ -40,6 +44,34 @@ npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache
+.npm
+
+# dotenv
+.env
+.env.test
+
+# Build output
+dist
+
+# generated files
+*.log
+*.tmp
+*.cache
+
+# Yarn
+.yarn-integrity
+
+# Parcel
+.cache
+.parcel-cache
+
+# VS Code test
+.vscode-test
 # Operating System
 .DS_Store
 

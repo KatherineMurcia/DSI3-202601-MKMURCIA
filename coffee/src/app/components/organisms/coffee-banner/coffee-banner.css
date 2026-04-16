@@ -1,0 +1,40 @@
+.coffee-banner {
+  height: 100vh;
+  min-height: 40rem;
+  background-image: url('/images/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.coffee-banner__content {
+  color: var(--color-neutro1, #ffffff);
+  padding: var(--space-lg, 2.5rem);
+}
+
+.coffee-banner__title {
+  font-family: var(--font-pr, 'Poor Richard', serif);
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--color-neutro1, #ffffff);
+  margin-bottom: var(--space-md, 1.5rem);
+}
+
+.coffee-banner__subtitle {
+  font-family: var(--font-r, 'Rokkitt', serif);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-neutro1, #ffffff);
+  margin-bottom: var(--space-lg, 2.5rem);
+}
+
+.coffee-banner app-button .button {
+  border-radius: 999px;
+  width: 10px;
+  padding: 0.9rem 2.2rem;
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.20);
+}

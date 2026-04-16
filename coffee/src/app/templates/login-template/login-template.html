@@ -1,0 +1,15 @@
+<div class="login-template">
+  @if (!isRegisterMode) {
+    <app-login-form
+      [errorMessage]="loginError"
+      (login)="login.emit($event)"
+      (switchToRegister)="toggleMode()">
+    </app-login-form>
+  } @else {
+    <app-register-form
+      [errorMessage]="registerError"
+      (register)="register.emit($event)"
+      (switchToLogin)="toggleMode()">
+    </app-register-form>
+  }
+</div>

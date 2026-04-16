@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rokkitt:wght@400;600&display=swap');
+
+:root {
+  --font-pr: "Poor Richard", serif;
+  --font-r: "Rokkitt", serif;
+  --font-p: "Poppins", sans-serif;
+
+  --color-principal: #4B2E2B;
+  --color-secundario: #FFF3F3;
+  --color-terciario: #88AF52;
+  --color-neutro1: #FFFFFF;
+  --color-neutro2: #000000;
+  --color-apoyo-1: #E5E5E5;
+  --color-apoyo-2: #6C6C6C;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 5rem;
+
+  --radius: 0.9375rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-p);
+  color: var(--color-neutro2);
+  background: var(--color-neutro1);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

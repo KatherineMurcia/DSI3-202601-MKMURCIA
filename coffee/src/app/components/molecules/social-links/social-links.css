@@ -1,0 +1,16 @@
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.social-links__link {
+  color: var(--color-neutro1, #ffffff);
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+}
+
+.social-links__link:hover {
+  color: var(--color-terciario, #88AF52);
+  transform: translateY(-3px);
+}

@@ -1,0 +1,9 @@
+.about-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.about-buttons app-button {
+  flex: 1;
+}
