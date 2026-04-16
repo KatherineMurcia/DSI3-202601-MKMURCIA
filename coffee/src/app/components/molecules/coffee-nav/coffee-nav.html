@@ -1,0 +1,43 @@
+<nav class="coffee-nav" aria-label="Navegación principal">
+  <ul class="coffee-nav__list">
+    <li class="coffee-nav__item">
+      <a class="coffee-nav__link"
+         routerLink="/"
+         routerLinkActive="coffee-nav__link--active"
+         [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    </li>
+    <li class="coffee-nav__item">
+      <a class="coffee-nav__link" href="#nosotros">Nosotros</a>
+    </li>
+    @if (isLoggedIn) {
+      <li class="coffee-nav__item">
+        <a class="coffee-nav__link"
+           routerLink="/dashboard"
+           routerLinkActive="coffee-nav__link--active">Dashboard</a>
+      </li>
+      <li class="coffee-nav__item">
+        <a class="coffee-nav__link coffee-nav__link--logout" (click)="logout()">Cerrar sesión</a>
+      </li>
+    } @else {
+      <li class="coffee-nav__item coffee-nav__item--dropdown">
+        <button class="coffee-nav__link coffee-nav__link--sesion" type="button" routerLink="/login" (click)="closeDropdown()">
+          Iniciar sesión
+        </button>
+<!--         @if (dropdownOpen) {
+          <ul class="coffee-nav__dropdown">
+            <li><a class="coffee-nav__dropdown-link" routerLink="/login" (click)="closeDropdown()">Logearse</a></li>
+            <li><a class="coffee-nav__dropdown-link" routerLink="/register" (click)="closeDropdown()">Registrarse</a></li>
+          </ul>
+        } -->
+      </li>
+    }
+    <li class="coffee-nav__item">
+      <a class="coffee-nav__link" href="#">Idioma</a>
+    </li>
+    <li class="coffee-nav__item">
+      <button class="coffee-nav__cart" type="button" aria-label="Carrito">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,63 @@
+.coffee-footer {
+  background: var(--color-principal, #4B2E2B);
+  padding: 3rem 2rem;
+}
+
+.coffee-footer h6 {
+  font-family: var(--font-r, 'Rokkitt', serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-neutro1, #ffffff);
+}
+
+.coffee-footer__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.coffee-footer__brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.coffee-footer__flag {
+  width: 4.5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.5rem;
+}
+
+.coffee-footer__legal {
+  display: flex;
+  flex-direction: column;
+}
+
+.coffee-footer__legal h6:first-child {
+  margin-bottom: 0.8rem;
+}
+
+.coffee-footer__right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.coffee-footer__title {
+  margin-bottom: 0.6rem;
+}
+
+.coffee-footer__link {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.coffee-footer__link:hover {
+  color: var(--color-terciario, #88AF52) !important;
+}

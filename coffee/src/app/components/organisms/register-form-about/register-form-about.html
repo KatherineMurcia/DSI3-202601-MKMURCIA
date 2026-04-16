@@ -1,0 +1,24 @@
+<div class="coffee-about__registro">
+    <h2 class="coffee-about__registro-titulo">Regístrate ya !</h2>
+    <p class="coffee-about__registro-subtitulo">Recibirás promociones</p>
+    <form class="coffee-about__registro-form" (ngSubmit)="onSubmit()">
+        <app-input-field class="coffee-about__registro-input" placeholder="Cédula:" [(value)]="cedula" name="cedula"
+            required></app-input-field>
+        <app-input-field class="coffee-about__registro-input" placeholder="Nombres:" [(value)]="nombre" name="nombre"
+            required></app-input-field>
+        <app-input-field class="coffee-about__registro-input" placeholder="Apellidos:" [(value)]="apellidos"
+            name="apellidos" required></app-input-field>
+        <app-input-field class="coffee-about__registro-input" type="email" placeholder="Correo electrónico:"
+            [(value)]="correo" name="correo" required></app-input-field>
+        <app-input-field class="coffee-about__registro-input" placeholder="Ciudad:" [(value)]="ciudad" name="ciudad"
+            required></app-input-field>
+        <app-input-field class="coffee-about__registro-input" type="password" placeholder="Contraseña:"
+            [(value)]="contrasena" name="contrasena" required></app-input-field>
+        <app-button class="coffee-about__registro-button" (click)="onSubmit()" label="Registrarse"></app-button>
+
+        @if (errorMessage) {
+        <p class="register-form__error">⚠️ {{ errorMessage }}</p>
+        }
+
+    </form>
+</div>

@@ -1,0 +1,68 @@
+<div class="register-form">
+  <app-app-logo></app-app-logo>
+  <h2 class="register-form__title">Crear Cuenta</h2>
+  <p class="register-form__subtitle">Completa el formulario</p>
+
+  <div class="register-form__row">
+    <app-input-field
+      label="Cédula"
+      type="text"
+      placeholder="1234567890"
+      [value]="cedula"
+      (valueChange)="cedula = $event">
+    </app-input-field>
+    <app-input-field
+      label="Nombre"
+      type="text"
+      placeholder="Juan"
+      [value]="nombre"
+      (valueChange)="nombre = $event">
+    </app-input-field>
+  </div>
+
+  <div class="register-form__row">
+    <app-input-field
+      label="Apellidos"
+      type="text"
+      placeholder="García López"
+      [value]="apellidos"
+      (valueChange)="apellidos = $event">
+    </app-input-field>
+    <app-input-field
+      label="Ciudad"
+      type="text"
+      placeholder="Bogotá"
+      [value]="ciudad"
+      (valueChange)="ciudad = $event">
+    </app-input-field>
+  </div>
+
+  <app-input-field
+    label="Correo electrónico"
+    type="email"
+    placeholder="usuario&#64;email.com"
+    [value]="correo"
+    (valueChange)="correo = $event">
+  </app-input-field>
+
+  <app-input-field
+    label="Contraseña"
+    type="password"
+    placeholder="••••••••"
+    [value]="contrasena"
+    (valueChange)="contrasena = $event">
+  </app-input-field>
+
+  @if (errorMessage) {
+    <p class="register-form__error">⚠️ {{ errorMessage }}</p>
+  }
+  <div class="register-form__button">
+    <app-button label="Registrarse" (clicked)="onSubmit()"></app-button>
+  </div>
+
+  <app-link-text
+    text="¿Ya tienes cuenta?"
+    linkLabel="Inicia sesión"
+    (linkClicked)="switchToLogin.emit()">
+  </app-link-text>
+</div>

@@ -1,0 +1,51 @@
+.coffee-categories {
+  padding: 6rem 2rem 3rem;
+}
+
+.coffee-categories__title {
+  text-align: center;
+  font-family: var(--font-pr, 'Poor Richard', serif);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-principal, #4B2E2B);
+  margin-bottom: var(--space-lg, 2.5rem);
+}
+
+.coffee-categories__carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.coffee-categories__track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.coffee-categories__slide {
+  flex: 0 0 calc((100% - 4.5rem) / 4);
+}
+
+.coffee-categories__indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.coffee-categories__dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secundario, #FFF3F3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.coffee-categories__dot--active {
+  background-color: var(--color-principal, #4B2E2B);
+  transform: scale(1.2);
+}

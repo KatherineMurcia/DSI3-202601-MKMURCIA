@@ -1,0 +1,17 @@
+.link-text {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-apoyo-2, #555);
+  font-family: var(--font-p, 'Poppins', sans-serif);
+}
+
+.link-text__link {
+  color: var(--color-principal, #4B2E2B);
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link-text__link:hover {
+  text-decoration: underline;
+}

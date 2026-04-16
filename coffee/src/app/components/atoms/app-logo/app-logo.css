@@ -1,0 +1,22 @@
+.app-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo__image {
+  height: 4rem;
+  width: auto;
+}
+
+.app-logo__placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-principal, #4B2E2B);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}

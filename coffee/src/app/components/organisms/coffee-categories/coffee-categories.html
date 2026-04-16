@@ -1,0 +1,19 @@
+<section class="coffee-categories">
+  <h2 class="coffee-categories__title">Compra por categoría</h2>
+  <div class="coffee-categories__carousel">
+    <div class="coffee-categories__track" [style.transform]="'translateX(-' + slideOffset + 'px)'">
+      @for (cat of categories; track cat.title) {
+        <div class="coffee-categories__slide">
+          <app-coffee-card [image]="cat.image" [title]="cat.title"></app-coffee-card>
+        </div>
+      }
+    </div>
+    <div class="coffee-categories__indicators">
+      @for (dot of dots; track $index) {
+        <span class="coffee-categories__dot"
+              [class.coffee-categories__dot--active]="$index === currentIndex"
+              (click)="goToSlide($index)"></span>
+      }
+    </div>
+  </div>
+</section>
