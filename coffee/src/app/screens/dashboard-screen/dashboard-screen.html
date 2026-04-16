@@ -1,0 +1,27 @@
+@if (user) {
+  <div class="dashboard">
+    <h1 class="dashboard__title">Panel de Usuario</h1>
+    <div class="dashboard__card">
+      <div class="dashboard__field">
+        <span class="dashboard__label">Cédula:</span>
+        <span class="dashboard__value">{{ user.cedula }}</span>
+      </div>
+      <div class="dashboard__field">
+        <span class="dashboard__label">Nombre:</span>
+        <span class="dashboard__value">{{ user.nombre }}</span>
+      </div>
+      <div class="dashboard__field">
+        <span class="dashboard__label">Apellidos:</span>
+        <span class="dashboard__value">{{ user.apellidos }}</span>
+      </div>
+      <div class="dashboard__field">
+        <span class="dashboard__label">Correo:</span>
+        <span class="dashboard__value">{{ user.correo }}</span>
+      </div>
+      <div class="dashboard__field">
+        <span class="dashboard__label">Ciudad:</span>
+        <span class="dashboard__value">{{ user.ciudad }}</span>
+      </div>
+    </div>
+  </div>
+}
