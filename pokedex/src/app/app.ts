@@ -1,12 +1,34 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { PokemonService } from './services/pokemon-service';
+import { PokemonsListDto, PokemonDetailDto } from './models/model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
+
 })
 export class App {
-  protected readonly title = signal('pokedex');
+  protected readonly isSignal = signal('pokedex');
+
+  pokemons: PokemonsListDto[] = [];
+  listPokemons: PokemonDetailDto[] = [];
+
+  constructor(pokemonService: PokemonService) {
+    pokemonService.getPokemons(0,100).subscribe((result) => {
+    console.log(result);
+    console.log(result.results);
+    this.pokemons = result.results;
+
+    this.pokemons.map((pokemon) => {
+      pokemonService.getPokemon(pokemon.name).subscribe((response) => {
+        this.listPokemons.push(response);
+      });
+    });
+    console.log(this.listPokemons);
+  }
+  );
+  }
+
 }
