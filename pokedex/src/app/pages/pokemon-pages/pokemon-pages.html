@@ -1,0 +1,16 @@
+<div *ngFor="let pokemon of listPokemons">
+
+  <h3>{{ pokemon.name | uppercase }}</h3>
+
+  <p><strong>Número:</strong> {{ pokemon.id }}</p>
+
+  <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+
+  <p><strong>Tipos:</strong></p>
+  <ul>
+    <li *ngFor="let t of pokemon.types">
+      {{ t.type.name }}
+    </li>
+  </ul>
+
+</div>
