@@ -12,7 +12,7 @@ export interface PokemonsListDto {
 export interface PokemonDetailDto {
   id : number;
   name: string;
-  type: PokemonDetailListTypeDTO [];
+  types: PokemonDetailListTypeDTO [];
   sprites: PokemonDetailSpriteDto;
 }
 export interface PokemonDetailListTypeDTO {
