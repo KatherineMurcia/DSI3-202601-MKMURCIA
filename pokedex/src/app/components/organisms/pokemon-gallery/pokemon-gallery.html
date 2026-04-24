@@ -1,0 +1,14 @@
+<div class="gallery">
+  <h2>GALERÍA DE EXPLORACIÓN</h2>
+  <div class="grid">
+    <app-pokemon-card
+      *ngFor="let pokemon of pokemons"
+      [pokemon]="pokemon"
+      (click)="selectPokemon.emit(pokemon)">
+    </app-pokemon-card>
+  </div>
+  <div class="pagination">
+    <button (click)="prev.emit()" [disabled]="offset === 0">Anterior</button>
+    <button (click)="next.emit()">Siguiente</button>
+  </div>
+</div>
