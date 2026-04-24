@@ -39,19 +39,25 @@ export class PokemonPages {
   }
 
   onSearch(query: string): void {
-    this.pokemonService.getPokemon(query.toLowerCase()).subscribe({
-      next: (pokemon) => {
-        this.selectedPokemon = pokemon;
-        this.searchError = false;
-        this.cdr.detectChanges();
-      },
-      error: () => {
-        this.selectedPokemon = null;
-        this.searchError = true;
-        this.cdr.detectChanges();
-      }
-    });
+    if (!query.trim()) {
+    this.selectedPokemon = null;
+    this.searchError = false;
+    this.cdr.detectChanges();
+    return;
   }
+  this.pokemonService.getPokemon(query.trim().toLowerCase()).subscribe({
+    next: (pokemon) => {
+      this.selectedPokemon = pokemon;
+      this.searchError = false;
+      this.cdr.detectChanges();
+    },
+    error: () => {
+      this.selectedPokemon = null;
+      this.searchError = true;
+      this.cdr.detectChanges();
+    }
+  });
+}
 
   onNext(): void {
     this.offset += this.limit;
@@ -64,4 +70,6 @@ export class PokemonPages {
       this.loadPokemons();
     }
   }
+
 }
+
