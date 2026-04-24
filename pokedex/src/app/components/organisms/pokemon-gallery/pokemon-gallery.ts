@@ -12,7 +12,12 @@ import { PokemonCard } from '../../molecules/pokemon-card/pokemon-card';
 export class PokemonGallery {
   @Input() pokemons: PokemonDetailDto[] = [];
   @Input() offset: number = 0;
+  @Input() limit: number = 20;
   @Output() selectPokemon = new EventEmitter<PokemonDetailDto>();
   @Output() next = new EventEmitter<void>();
   @Output() prev = new EventEmitter<void>();
+
+  get currentPage(): number {
+    return Math.floor(this.offset / this.limit) + 1;
+  }
 }
