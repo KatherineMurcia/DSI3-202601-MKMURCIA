@@ -1,0 +1,56 @@
+.gallery {
+  padding: 1rem;
+}
+
+.gallery h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.pagination-buttons button {
+  padding: 6px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #4a90d9;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pagination-buttons button:hover {
+  background: #357abd;
+}
+
+.pagination-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-number {
+  font-size: 13px;
+  color: #555;
+  position: absolute;
+  right: 0;
+}

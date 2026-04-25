@@ -1,0 +1,20 @@
+<app-main-layout>
+  <div detail>
+    <app-pokemon-detail
+      [pokemon]="selectedPokemon!"
+      (search)="onSearch($event)">
+    </app-pokemon-detail>
+    <div *ngIf="searchError" class="error-msg">
+      No existe información del Pokémon
+    </div>
+  </div>
+  <div gallery>
+    <app-pokemon-gallery
+      [pokemons]="listPokemons"
+      [offset]="offset"
+      (selectPokemon)="onSelectPokemon($event)"
+      (next)="onNext()"
+      (prev)="onPrev()">
+    </app-pokemon-gallery>
+  </div>
+</app-main-layout>

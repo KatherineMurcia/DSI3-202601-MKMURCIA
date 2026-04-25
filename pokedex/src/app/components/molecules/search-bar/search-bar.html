@@ -1,0 +1,8 @@
+<div class="search-bar">
+  <input
+    type="text"
+    [(ngModel)]="query"
+    placeholder="Busca por nombre o ID (ej: 25)..."
+    (keyup.enter)="onSearch()">
+  <button (click)="onSearch()">BUSCAR</button>
+</div>

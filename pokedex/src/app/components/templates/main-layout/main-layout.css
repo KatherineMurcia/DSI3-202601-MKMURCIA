@@ -1,0 +1,18 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.detail-panel {
+  width: 300px;
+  min-width: 300px;
+  border-right: 1px solid #ccc;
+  padding-right: 1rem;
+}
+
+.gallery-panel {
+  flex: 1;
+  overflow-y: auto;
+}
