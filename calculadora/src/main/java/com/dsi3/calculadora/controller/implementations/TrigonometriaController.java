@@ -25,4 +25,24 @@ public class TrigonometriaController implements ITrigonometriaController {
     public ResponseEntity<TrigonometriaResponseDTO> calcularCoseno(TrigonometriaRequestDTO request) {
         return trigonometriaService.calcularCoseno(request);
     }
+
+    @Override
+    public ResponseEntity<TrigonometriaResponseDTO> calcularTangente(TrigonometriaRequestDTO request) {
+        return trigonometriaService.calcularTangente(request);
+    }
+
+    @Override
+    public ResponseEntity<TrigonometriaResponseDTO> calcularCosecante(TrigonometriaRequestDTO request) {
+        return trigonometriaService.calcularCosecante(request);
+    }
+
+    @Override
+    public ResponseEntity<TrigonometriaResponseDTO> calcularSecante(TrigonometriaRequestDTO request) {
+        return trigonometriaService.calcularSecante(request);
+    }
+
+    @Override
+    public ResponseEntity<TrigonometriaResponseDTO> calcularCotangente(TrigonometriaRequestDTO request) {
+        return trigonometriaService.calcularCotangente(request);
+    }
 }
