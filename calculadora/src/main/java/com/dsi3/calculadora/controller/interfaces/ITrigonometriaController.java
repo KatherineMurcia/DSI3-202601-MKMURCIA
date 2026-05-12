@@ -15,4 +15,16 @@ public interface ITrigonometriaController {
 
     @PostMapping("/coseno")
     ResponseEntity<TrigonometriaResponseDTO> calcularCoseno(@RequestBody TrigonometriaRequestDTO request);
+
+    @PostMapping("/tangente")
+    ResponseEntity<TrigonometriaResponseDTO> calcularTangente(@RequestBody TrigonometriaRequestDTO request);
+
+    @PostMapping("/cosecante")
+    ResponseEntity<TrigonometriaResponseDTO> calcularCosecante(@RequestBody TrigonometriaRequestDTO request);
+
+    @PostMapping("/secante")
+    ResponseEntity<TrigonometriaResponseDTO> calcularSecante(@RequestBody TrigonometriaRequestDTO request);
+
+    @PostMapping("/cotangente")
+    ResponseEntity<TrigonometriaResponseDTO> calcularCotangente(@RequestBody TrigonometriaRequestDTO request);
 }
