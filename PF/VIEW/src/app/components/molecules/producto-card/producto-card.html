@@ -1,0 +1,25 @@
+<div class="producto-card card">
+  <div class="producto-img">
+    @if (producto().imagenUrl) {
+      <img [src]="producto().imagenUrl" [alt]="producto().nombre"
+           (error)="$any($event.target).style.display='none'" />
+    }
+    <span class="img-placeholder">Imagen</span>
+  </div>
+  <div class="producto-body">
+    <h3 class="producto-nombre">{{ producto().nombre }}</h3>
+    <div class="producto-badges">
+      <span class="badge-cat">{{ producto().categoria }}</span>
+      <span class="badge-estado"
+        [class.activo]="producto().disponible"
+        [class.inactivo]="!producto().disponible">
+        {{ producto().disponible ? 'ACTIVO' : 'INACTIVO' }}
+      </span>
+    </div>
+    <span class="producto-precio">{{ formatPrice(producto().precio) }}</span>
+  </div>
+  <div class="producto-footer">
+    <button class="btn-edit" (click)="editClick.emit()">EDITAR</button>
+    <button class="btn-delete" (click)="deleteClick.emit()">ELIMINAR</button>
+  </div>
+</div>

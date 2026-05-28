@@ -1,0 +1,9 @@
+<div class="search-bar card">
+  <input
+    type="text"
+    [placeholder]="placeholder()"
+    [ngModel]="value()"
+    (ngModelChange)="valueChange.emit($event)"
+  />
+  <span class="registros-count">{{ count() }} registros</span>
+</div>

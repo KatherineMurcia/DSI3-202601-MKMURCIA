@@ -1,0 +1,52 @@
+<div class="page-header">
+  <div class="page-title">
+    <h1>Panel de Control</h1>
+    <p>MesaYa / Dashboard</p>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-grid">
+  <app-stat-card label="Productos activos" [value]="totalProductos()" />
+  <app-stat-card label="Mesas disponibles" [value]="mesasDisponibles + ' / ' + totalMesas" />
+  <app-stat-card label="Pedidos activos" [value]="pedidosActivos.length" />
+  <app-stat-card label="Pedidos entregados hoy" [value]="pedidosEntregados" />
+</div>
+
+<!-- Content -->
+<div class="content-grid">
+
+  <!-- Pedidos recientes -->
+  <div class="card panel-card">
+    <div class="panel-header">PEDIDOS RECIENTES</div>
+    @if (pedidosRecientes.length === 0) {
+      <div class="empty-state"><p>No hay pedidos aún</p></div>
+    } @else {
+      @for (p of pedidosRecientes; track p.id) {
+        <div class="pedido-row">
+          <span class="pedido-id">Pedido #{{ p.id.slice(-3).toUpperCase() }}</span>
+          <span class="pedido-mesa">Mesa {{ p.mesa.numero }}</span>
+          <app-badge [type]="estadoBadge(p.estado)">{{ estadoLabel(p.estado) }}</app-badge>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- Estado de mesas -->
+  <div class="card panel-card">
+    <div class="panel-header">ESTADO DE MESAS</div>
+    @if (totalMesas === 0) {
+      <div class="empty-state"><p>No hay mesas registradas</p></div>
+    } @else {
+      <div class="mesas-mini-grid">
+        @for (m of mesaService.mesas(); track m.id) {
+          <div class="mesa-mini" [class.ocupada]="m.estado === 'Ocupada'">
+            <span class="mesa-num">M{{ m.numero }}</span>
+            <span class="mesa-est">{{ m.estado === 'Ocupada' ? 'OCUP' : 'LIBRE' }}</span>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+</div>

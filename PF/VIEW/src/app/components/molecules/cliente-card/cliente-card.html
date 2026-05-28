@@ -1,0 +1,18 @@
+<div class="cliente-card card">
+  <div class="card-head">
+    <div class="avatar">{{ initials() }}</div>
+    <div class="head-info">
+      <span class="cliente-nombre">{{ cliente().nombre }}</span>
+      <span class="cliente-sub">{{ cliente().correo }}</span>
+      <span class="cliente-sub">{{ cliente().telefono || '—' }}</span>
+    </div>
+  </div>
+  <div class="puntos-box">
+    <span class="puntos-label">PUNTOS ACUMULADOS</span>
+    <span class="puntos-value">Pendiente</span>
+  </div>
+  <div class="card-footer">
+    <button class="btn-edit" (click)="editClick.emit()">EDITAR</button>
+    <button class="btn-delete" (click)="deleteClick.emit()">ELIMINAR</button>
+  </div>
+</div>

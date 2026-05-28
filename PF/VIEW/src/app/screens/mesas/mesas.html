@@ -1,0 +1,59 @@
+<div class="page-header">
+  <div class="page-title">
+    <h1>Mesas</h1>
+    <p>MesaYa / Mesas</p>
+  </div>
+  <app-button (clicked)="openCreate()">+ Nueva Mesa</app-button>
+</div>
+
+<app-tab-bar [tabs]="tabsConCuenta()" [active]="filtro()" (activeChange)="onFiltroChange($event)" />
+
+@if (mesasFiltradas().length === 0) {
+  <div class="empty-state">
+    <p>No hay mesas en esta categoría.</p>
+  </div>
+} @else {
+  <div class="mesas-grid">
+    @for (m of mesasFiltradas(); track m.id) {
+      <app-mesa-card [mesa]="m" (editClick)="openEdit(m)" (deleteClick)="askDelete(m)" />
+    }
+  </div>
+}
+
+@if (showModal()) {
+  <div class="modal-overlay" (click)="showModal.set(false)">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>{{ isEditing() ? 'Editar Mesa' : 'Nueva Mesa' }}</h2>
+        <app-button variant="ghost" (clicked)="showModal.set(false)">×</app-button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Número de mesa *</label>
+          <input type="number" [(ngModel)]="numero" min="1" placeholder="1" />
+        </div>
+        <div class="form-group">
+          <label>Capacidad (personas) *</label>
+          <input type="number" [(ngModel)]="capacidad" min="1" placeholder="4" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <app-button variant="secondary" (clicked)="showModal.set(false)">Cancelar</app-button>
+        <app-button (clicked)="save()">{{ isEditing() ? 'Guardar' : 'Crear mesa' }}</app-button>
+      </div>
+    </div>
+  </div>
+}
+
+@if (showConfirm()) {
+  <div class="modal-overlay" (click)="showConfirm.set(false)">
+    <div class="modal-card confirm-modal" (click)="$event.stopPropagation()">
+      <div class="modal-header"><h2>Eliminar mesa</h2></div>
+      <div class="modal-body"><p>¿Eliminar esta mesa? Esta acción no se puede deshacer.</p></div>
+      <div class="modal-footer">
+        <app-button variant="secondary" (clicked)="showConfirm.set(false)">Cancelar</app-button>
+        <app-button variant="danger" (clicked)="confirmDelete()">Eliminar</app-button>
+      </div>
+    </div>
+  </div>
+}

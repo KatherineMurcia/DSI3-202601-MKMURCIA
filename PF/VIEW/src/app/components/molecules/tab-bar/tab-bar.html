@@ -1,0 +1,12 @@
+<div class="tabs-bar">
+  @for (tab of tabs(); track tab.value) {
+    <button
+      class="tab-btn"
+      [class.active]="active() === tab.value"
+      (click)="activeChange.emit(tab.value)"
+    >
+      {{ tab.label }}
+      <span class="tab-count">{{ tab.count }}</span>
+    </button>
+  }
+</div>

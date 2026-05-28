@@ -1,0 +1,15 @@
+<div class="mesa-card card">
+  <div class="mesa-body">
+    <span class="mesa-numero">{{ mesa().numero }}</span>
+    <span class="mesa-cap">{{ mesa().capacidad }} personas</span>
+    <span class="mesa-badge"
+      [class.disponible]="mesa().estado === 'Disponible'"
+      [class.ocupada]="mesa().estado === 'Ocupada'">
+      {{ mesa().estado === 'Disponible' ? 'DISPONIBLE' : 'OCUPADA' }}
+    </span>
+  </div>
+  <div class="mesa-footer">
+    <button class="btn-edit" (click)="editClick.emit()">EDITAR</button>
+    <button class="btn-delete" (click)="deleteClick.emit()" [disabled]="mesa().estado === 'Ocupada'">ELIMINAR</button>
+  </div>
+</div>

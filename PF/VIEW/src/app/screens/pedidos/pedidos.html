@@ -1,0 +1,158 @@
+<div class="page-header">
+  <div class="page-title">
+    <h1>Pedidos</h1>
+    <p>MesaYa / Pedidos</p>
+  </div>
+  <app-button (clicked)="openCreate()">+ Nuevo Pedido</app-button>
+</div>
+
+<app-tab-bar [tabs]="tabsConCuenta()" [active]="filtroEstado()" (activeChange)="onFiltroChange($event)" />
+
+@if (pedidosFiltrados().length === 0) {
+  <div class="empty-state">
+    <p>No hay pedidos en esta categoría.</p>
+  </div>
+} @else {
+  <div class="pedidos-grid">
+    @for (p of pedidosFiltrados(); track p.id) {
+      <app-pedido-card
+        [pedido]="p"
+        (avanzarClick)="avanzar(p)"
+        (deleteClick)="askDelete(p)"
+        (detailClick)="openDetail(p)"
+      />
+    }
+  </div>
+}
+
+<!-- Create Modal -->
+@if (showModal()) {
+  <div class="modal-overlay" (click)="showModal.set(false)">
+    <div class="modal-card modal-lg" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Nuevo Pedido</h2>
+        <app-button variant="ghost" (clicked)="showModal.set(false)">×</app-button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mesa * (solo disponibles)</label>
+            <select [(ngModel)]="selectedMesaId">
+              <option value="">Seleccionar mesa</option>
+              @for (m of mesasDisponibles; track m.id) {
+                <option [value]="m.id">Mesa {{ m.numero }} – Cap. {{ m.capacidad }}</option>
+              }
+            </select>
+            @if (mesasDisponibles.length === 0) {
+              <small class="text-danger">No hay mesas disponibles.</small>
+            }
+          </div>
+          <div class="form-group">
+            <label>Cliente (opcional)</label>
+            <select [(ngModel)]="selectedClienteId">
+              <option value="">Sin cliente</option>
+              @for (c of clientes; track c.id) {
+                <option [value]="c.id">{{ c.nombre }}</option>
+              }
+            </select>
+          </div>
+        </div>
+
+        <div class="items-section">
+          <h3>Productos del pedido</h3>
+          <div class="add-item-row">
+            <div class="form-group flex-1">
+              <select [(ngModel)]="selectedProductoId">
+                <option value="">Seleccionar producto</option>
+                @for (pr of productos; track pr.idProducto) {
+                  <option [value]="pr.idProducto">{{ pr.nombre }} – ${{ pr.precio }}</option>
+                }
+              </select>
+            </div>
+            <div class="form-group qty-field">
+              <input type="number" [(ngModel)]="cantidadItem" min="1" placeholder="Cant." />
+            </div>
+            <app-button variant="secondary" [disabled]="!selectedProductoId" (clicked)="addItem()">+</app-button>
+          </div>
+
+          @if (loadingProductos()) {
+            <p class="text-muted text-sm">Cargando productos...</p>
+          } @else if (productos.length === 0) {
+            <p class="text-muted text-sm">No hay productos activos.</p>
+          }
+
+          @if (items.length > 0) {
+            <div class="modal-items-list">
+              @for (item of items; track $index) {
+                <div class="item-row">
+                  <span class="item-name">{{ item.producto.nombre }} x{{ item.cantidad }}</span>
+                  <span class="item-price">${{ item.subtotal.toFixed(2) }}</span>
+                  <app-button variant="ghost" (clicked)="removeItem($index)">×</app-button>
+                </div>
+              }
+              <div class="total-row">
+                <span>Total</span>
+                <strong>${{ totalItems().toFixed(2) }}</strong>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="modal-footer">
+        <app-button variant="secondary" (clicked)="showModal.set(false)">Cancelar</app-button>
+        <app-button [disabled]="!selectedMesaId || items.length === 0" (clicked)="savePedido()">Crear pedido</app-button>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Detail Modal -->
+@if (showDetail() && selectedPedido()) {
+  <div class="modal-overlay" (click)="showDetail.set(false)">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Detalle – Mesa {{ selectedPedido()!.mesa.numero }}</h2>
+        <app-button variant="ghost" (clicked)="showDetail.set(false)">×</app-button>
+      </div>
+      <div class="modal-body">
+        <div class="detail-row">
+          <span class="text-muted">Estado</span>
+          <app-badge [type]="estadoBadge(selectedPedido()!.estado)">{{ estadoLabel(selectedPedido()!.estado) }}</app-badge>
+        </div>
+        <div class="detail-row">
+          <span class="text-muted">Cliente</span>
+          <span>{{ selectedPedido()!.cliente?.nombre ?? 'Sin cliente' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="text-muted">Fecha</span>
+          <span>{{ selectedPedido()!.fechaCreacion | date:'dd/MM/yyyy HH:mm' }}</span>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:8px 0"/>
+        @for (item of selectedPedido()!.items; track $index) {
+          <div class="detail-row">
+            <span>{{ item.producto.nombre }} x{{ item.cantidad }}</span>
+            <span>${{ item.subtotal.toFixed(2) }}</span>
+          </div>
+        }
+        <div class="detail-row total-detail">
+          <strong>Total</strong>
+          <strong>${{ selectedPedido()!.total.toFixed(2) }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Confirm Delete -->
+@if (showConfirm()) {
+  <div class="modal-overlay" (click)="showConfirm.set(false)">
+    <div class="modal-card confirm-modal" (click)="$event.stopPropagation()">
+      <div class="modal-header"><h2>Eliminar pedido</h2></div>
+      <div class="modal-body"><p>¿Eliminar este pedido? Esta acción no se puede deshacer.</p></div>
+      <div class="modal-footer">
+        <app-button variant="secondary" (clicked)="showConfirm.set(false)">Cancelar</app-button>
+        <app-button variant="danger" (clicked)="confirmDelete()">Eliminar</app-button>
+      </div>
+    </div>
+  </div>
+}

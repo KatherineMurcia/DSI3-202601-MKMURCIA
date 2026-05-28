@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label>{{ label() }}</label>
+  <input
+    [type]="type()"
+    [name]="name()"
+    [ngModel]="value()"
+    (ngModelChange)="value.set($event)"
+    [placeholder]="placeholder()"
+    [required]="required()"
+  />
+</div>

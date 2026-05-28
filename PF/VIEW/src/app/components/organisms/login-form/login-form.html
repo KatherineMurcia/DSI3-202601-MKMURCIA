@@ -1,0 +1,30 @@
+<div class="login-card card">
+  <div class="login-brand">
+    <app-logo />
+  </div>
+  <h1>Bienvenido de nuevo</h1>
+  <p class="subtitle">Ingresa tus credenciales para continuar</p>
+
+  <form (ngSubmit)="onLogin()" class="login-form">
+    <div class="form-group">
+      <label>Correo electrónico</label>
+      <input type="email" [(ngModel)]="correo" name="correo" placeholder="tu@correo.com" required />
+    </div>
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input type="password" [(ngModel)]="contrasena" name="contrasena" placeholder="••••••••" required />
+    </div>
+
+    @if (error()) {
+      <div class="alert-error">{{ error() }}</div>
+    }
+
+    <app-button type="submit" [fullWidth]="true" [disabled]="loading()">
+      @if (loading()) { Ingresando... } @else { Iniciar sesión }
+    </app-button>
+  </form>
+
+  <p class="login-footer">
+    ¿No tienes cuenta? <a routerLink="/auth/register">Regístrate</a>
+  </p>
+</div>
