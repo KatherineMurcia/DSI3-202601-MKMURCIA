@@ -1,0 +1,115 @@
+.cliente-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #111111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.head-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.cliente-nombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cliente-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.puntos-box {
+  margin: 0 16px 16px;
+  padding: 12px 14px;
+  background: #f3f4f6;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.puntos-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.puntos-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.card-footer {
+  display: flex;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.btn-edit {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  border-right: 1px solid var(--border);
+  border-radius: 0 0 0 var(--radius);
+  background: var(--white);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-edit:hover { background: #f9fafb; }
+
+.btn-delete {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  border-radius: 0 0 var(--radius) 0;
+  background: #4b5563;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-delete:hover { background: #374151; }

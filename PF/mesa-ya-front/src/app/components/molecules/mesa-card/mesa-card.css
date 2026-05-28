@@ -1,0 +1,88 @@
+.mesa-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mesa-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 16px;
+  gap: 6px;
+  flex: 1;
+}
+
+.mesa-numero {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.mesa-cap {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.mesa-badge {
+  margin-top: 8px;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.mesa-badge.disponible {
+  background: #fff;
+  color: #374151;
+  border: 1.5px solid #d1d5db;
+}
+
+.mesa-badge.ocupada {
+  background: #111827;
+  color: #fff;
+  border: 1.5px solid #111827;
+}
+
+.mesa-footer {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+
+.btn-edit {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  border-right: 1px solid var(--border);
+  border-radius: 0 0 0 var(--radius);
+  background: #fff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-edit:hover { background: #f9fafb; }
+
+.btn-delete {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  border-radius: 0 0 var(--radius) 0;
+  background: #4b5563;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-delete:hover:not(:disabled) { background: #374151; }
+.btn-delete:disabled { opacity: 0.4; cursor: not-allowed; }

@@ -1,0 +1,129 @@
+.pedido-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 6px;
+}
+
+.pedido-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.card-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.card-sub .sep { color: #d1d5db; }
+
+.items-list {
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #fafafa;
+}
+
+.item-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.item-line .item-name  { color: #374151; }
+.item-line .item-price { font-weight: 600; color: #111827; }
+
+.card-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.card-total strong { font-size: 15px; font-weight: 800; color: #111827; }
+
+.btn-action {
+  display: block;
+  width: calc(100% - 28px);
+  margin: 0 14px 10px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-action:hover { opacity: 0.85; }
+
+.entregada-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 14px 10px;
+  padding: 10px 0;
+  border-radius: 6px;
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.card-footer {
+  display: flex;
+  gap: 8px;
+  padding: 8px 14px;
+  border-top: 1px solid #f3f4f6;
+  margin-top: auto;
+}
+
+.btn-detail {
+  flex: 1;
+  padding: 8px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-detail:hover { background: #f9fafb; }
+
+.btn-delete {
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-delete:hover { background: #d1d5db; }
