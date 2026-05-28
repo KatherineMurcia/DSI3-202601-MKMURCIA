@@ -1,0 +1,38 @@
+<div class="pedido-card card">
+  <div class="card-head">
+    <span class="pedido-num">Pedido #{{ pedido().id.slice(-3).toUpperCase() }}</span>
+    <app-badge [type]="estadoBadge(pedido().estado)">{{ estadoLabel(pedido().estado) }}</app-badge>
+  </div>
+
+  <div class="card-sub">
+    Mesa {{ pedido().mesa.numero }}
+    @if (pedido().cliente) {
+      <span class="sep">·</span> {{ pedido().cliente!.nombre }}
+    }
+  </div>
+
+  <div class="items-list">
+    @for (item of pedido().items; track $index) {
+      <div class="item-line">
+        <span class="item-name">{{ item.producto.nombre }} x{{ item.cantidad }}</span>
+        <span class="item-price">${{ item.subtotal.toFixed(2) }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="card-total">
+    <span>Total</span>
+    <strong>${{ pedido().total.toFixed(2) }}</strong>
+  </div>
+
+  @if (pedido().estado !== 'Entregada') {
+    <button class="btn-action" (click)="avanzarClick.emit()">{{ accionLabel(pedido().estado) }}</button>
+  } @else {
+    <div class="entregada-badge">Pedido entregado</div>
+  }
+
+  <div class="card-footer">
+    <button class="btn-detail" (click)="detailClick.emit()">Ver detalle</button>
+    <button class="btn-delete" (click)="deleteClick.emit()">Elim.</button>
+  </div>
+</div>
