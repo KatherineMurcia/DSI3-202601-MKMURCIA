@@ -1,0 +1,11 @@
+<div class="layout-root">
+  <app-sidebar />
+  <div class="layout-content">
+    <header class="top-bar">
+      <app-user-pill [initials]="initials()" [name]="authService.currentUser()?.nombre ?? ''" />
+    </header>
+    <main class="page-main">
+      <router-outlet />
+    </main>
+  </div>
+</div>
