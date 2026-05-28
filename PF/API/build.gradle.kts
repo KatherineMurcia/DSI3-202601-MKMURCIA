@@ -11,7 +11,7 @@ extra["lombok.version"] = "1.18.38"
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(26)
+		languageVersion = JavaLanguageVersion.of(25)
 	}
 }
 
