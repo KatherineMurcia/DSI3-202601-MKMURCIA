@@ -41,7 +41,7 @@ dependencies {
 }
 
 springBoot {
-	mainClass = "com.dsi3.api.ApiProductosApplication"
+	mainClass = "com.dsi3.api.ApiApplication"
 }
 
 tasks.named<Test>("test") {
