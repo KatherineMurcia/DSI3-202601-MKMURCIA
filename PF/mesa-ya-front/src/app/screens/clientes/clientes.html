@@ -1,0 +1,68 @@
+<div class="page-header">
+  <div class="page-title">
+    <h1>Clientes</h1>
+    <p>MesaYa / Clientes</p>
+  </div>
+  <app-button (clicked)="openCreate()">+ Nuevo Cliente</app-button>
+</div>
+
+<app-search-bar
+  placeholder="Buscar por nombre o correo..."
+  [value]="query()"
+  (valueChange)="query.set($event)"
+  [count]="service.clientes().length"
+/>
+
+@if (clientes().length === 0) {
+  <div class="empty-state">
+    <p>{{ query() ? 'Sin resultados para "' + query() + '"' : 'No hay clientes registrados.' }}</p>
+  </div>
+} @else {
+  <div class="clientes-grid">
+    @for (c of clientes(); track c.id) {
+      <app-cliente-card [cliente]="c" (editClick)="openEdit(c)" (deleteClick)="askDelete(c)" />
+    }
+  </div>
+}
+
+@if (showModal()) {
+  <div class="modal-overlay" (click)="showModal.set(false)">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>{{ isEditing() ? 'Editar Cliente' : 'Nuevo Cliente' }}</h2>
+        <app-button variant="ghost" (clicked)="showModal.set(false)">×</app-button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Nombre completo *</label>
+          <input type="text" [(ngModel)]="nombre" placeholder="Juan Pérez" />
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico *</label>
+          <input type="email" [(ngModel)]="correo" placeholder="juan@correo.com" />
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" [(ngModel)]="telefono" placeholder="+57 300 000 0000" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <app-button variant="secondary" (clicked)="showModal.set(false)">Cancelar</app-button>
+        <app-button (clicked)="save()">{{ isEditing() ? 'Guardar' : 'Crear cliente' }}</app-button>
+      </div>
+    </div>
+  </div>
+}
+
+@if (showConfirm()) {
+  <div class="modal-overlay" (click)="showConfirm.set(false)">
+    <div class="modal-card confirm-modal" (click)="$event.stopPropagation()">
+      <div class="modal-header"><h2>Eliminar cliente</h2></div>
+      <div class="modal-body"><p>¿Eliminar este cliente? Esta acción no se puede deshacer.</p></div>
+      <div class="modal-footer">
+        <app-button variant="secondary" (clicked)="showConfirm.set(false)">Cancelar</app-button>
+        <app-button variant="danger" (clicked)="confirmDelete()">Eliminar</app-button>
+      </div>
+    </div>
+  </div>
+}
